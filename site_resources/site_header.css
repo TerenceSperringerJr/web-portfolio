@@ -1,0 +1,20 @@
+/*
+	site_header.css
+*/
+
+body {
+	color: #888888;
+	margin: 0px;
+}
+
+div#site-header {
+	text-align: center;
+}
+
+div#site-label>h1 {
+	margin: 0px;
+}
+
+div#top-navigation-bar {
+	text-align: center;
+}

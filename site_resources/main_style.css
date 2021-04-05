@@ -1,0 +1,40 @@
+/*
+	main_style.css
+*/
+
+body {
+	color: #00AA00;
+	background-color: #000000;
+}
+
+h1, h2, h3, h4 {
+	text-align: center;
+}
+
+a {
+	color: #00C0C0;
+}
+
+iframe#page-source,
+div#page-content {
+	border: none;
+	margin-left: 15%;
+	width: 85%;
+	min-height: 480px;
+}
+
+iframe#site-header {
+	position: relative;
+	top: 0px;
+	left: 15%;
+	width: 85%;
+	border: none;
+}
+
+iframe#side-navigator {
+	position: fixed;
+	left: 0px;
+	border: none;
+	height: 100%;
+	max-width: 15%;
+}

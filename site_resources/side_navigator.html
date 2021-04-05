@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charaset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="side_navigator.css">
+
+	<title>Side Navigator</title>
+</head>
+
+<body>
+	<div id="side-navigator">
+		<nav id="side-navigator-links">
+			<div url="about.html">About</div>
+			<div url="personal.html">Personal Projects</div>
+			<div url="professional.html">Professional Work</div>
+			<div url="https://terencesperringerjr.github.io/resume/resume.xml">Resume</div>
+		</nav>
+	</div>
+</body>
+
+<script>
+"use strict";
+/*
+<div onclick="window.top.location.search = '';">About</div>
+<div onclick="window.top.location.search = 'page=personal';">Personal Projects</div>
+<div onclick="window.top.location.search = 'page=professional';">Professional Work</div>
+<div onclick="window.top.location.search = 'resource=https://terencesperringerjr.github.io/resume/resume.xml';">Resume</div>
+*/
+
+(function() {
+	let nav = document.getElementById("side-navigator-links"),
+		page_source = window.top.document.getElementById("page-source");
+
+	function loadPageSource(url) {
+		page_source.src = url;
+	}
+
+	for(let link of nav.children) {
+		link.onclick = () => { loadPageSource(link.getAttribute("url")); };
+	}
+})();
+</script>
+</html>
