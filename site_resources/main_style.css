@@ -2,17 +2,35 @@
 	main_style.css
 */
 
+/*
+Google Fonts
+	Super Legend Boy
+
+	Press Start 2P
+	https://fonts.googleapis.com/css?family=Press Start 2P
+*/
+
+:root {
+	--gameboy-dark: #01201b;
+	--gameboy-light: #4d892e;
+	--gameboy-neutral: #267c24;
+	--gameboy-font: "Super-Legend-Boy", "Press Start 2P", "Courier New";
+}
+
 body {
-	color: #00AA00;
-	background-color: #000000;
+	color: var(--gameboy-neutral);
+	background-color: var(--gameboy-dark);
+	font-family: "Courier New", monospace;
 }
 
 h1, h2, h3, h4 {
 	text-align: center;
+	font-family: var(--gameboy-font);
+	margin: 0px;
 }
 
 a {
-	color: #00C0C0;
+	color: var(--gameboy-light);
 }
 
 iframe#page-source,
@@ -37,4 +55,39 @@ iframe#side-navigator {
 	border: none;
 	height: 100%;
 	max-width: 15%;
+}
+
+
+/* Personal Projects */
+.project-description {
+	display: inline-block;
+}
+
+img.logo {
+	max-height: 90px;
+}
+
+.easter-egg {
+	color: var(--gameboy-dark);
+}
+
+
+/* Professoinal Work */
+.work-description {
+	display: inline-block;
+	vertical-align: top;
+	max-width: 65%;
+}
+
+summary {
+	margin-bottom: 10px;
+}
+
+details>:not(summary) {
+	position: relative;
+	margin-left: 5%;
+}
+
+td {
+	vertical-align: top;
 }

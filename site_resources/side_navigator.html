@@ -6,15 +6,17 @@
 	<link rel="stylesheet" href="side_navigator.css">
 
 	<title>Side Navigator</title>
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Press Start 2P">
 </head>
 
 <body>
 	<div id="side-navigator">
 		<nav id="side-navigator-links">
-			<div url="about.html">About</div>
-			<div url="personal.html">Personal Projects</div>
-			<div url="professional.html">Professional Work</div>
-			<div url="https://terencesperringerjr.github.io/resume/resume.xml">Resume</div>
+			<div id="about-nav-link" url="about.html">About</div>
+			<div id="personal-nav-link" url="personal.html">Personal Projects</div>
+			<div id="professional-nav-link" url="professional.html">Professional Work</div>
+			<div id="resume-nav-link" url="https://terencesperringerjr.github.io/resume/resume.xml">Resume</div>
 		</nav>
 	</div>
 </body>
@@ -37,7 +39,15 @@
 	}
 
 	for(let link of nav.children) {
-		link.onclick = () => { loadPageSource(link.getAttribute("url")); };
+		link.onclick = () => {
+			loadPageSource(link.getAttribute("url"));
+
+			for(let unclicked of nav.children) {
+				unclicked.classList.remove("clicked");
+			}
+
+			link.classList.add("clicked");
+		};
 	}
 })();
 </script>
