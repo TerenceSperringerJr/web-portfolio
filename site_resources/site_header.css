@@ -2,8 +2,16 @@
 	site_header.css
 */
 
+:root {
+	--gameboy-dark: #01201b;
+	--gameboy-light: #4d892e;
+	--gameboy-neutral: #267c24;
+	--gameboy-font: "Super-Legend-Boy", "Press Start 2P", "Courier New";
+}
+
 body {
-	color: #888888;
+	color: var(--gameboy-neutral);
+	font-family: var(--gameboy-font);
 	margin: 0px;
 }
 
@@ -17,4 +25,5 @@ div#site-label>h1 {
 
 div#top-navigation-bar {
 	text-align: center;
+	color: var(--gameboy-light);
 }

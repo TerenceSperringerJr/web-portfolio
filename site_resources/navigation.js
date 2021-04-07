@@ -5,22 +5,42 @@
 		search_pairs = search_query.split(/[=&]/),
 		page = "about",
 		iframe = document.getElementById("page-source"),
+		navigator = document.getElementById("side-navigator"),
 		page_content = document.getElementById("page-content"),
 		resource;
 
-	function transferPageContent() {
-		let page_body = iframe.contentDocument.body;
-
-		while(page_content.hasChildNodes()) {
+	function transformPageContent() {
+		while(page_content.firstChild){
 			page_content.removeChild(page_content.firstChild);
 		}
 
-		while(page_body.hasChildNodes()) {
-			page_content.appendChild(page_body.firstChild);
+		if(iframe.contentWindow.location.origin === location.origin) {
+			let page_body = iframe.contentDocument.body;
+
+			iframe.hidden = true;
+
+			//convert from relative to absolute urls
+			for(let img of iframe.contentDocument.images) {
+				img.src = img.src;
+			}
+
+			while (page_body.firstChild) {
+				page_content.appendChild(page_body.firstChild);
+			}
+
+			page_content.hidden = false;
+		}
+		else {
+			page_content.hidden = true;
+			iframe.hidden = false;
 		}
 	}
 
-	//iframe.onload = transferPageContent;
+	function updateNavigator() {
+		navigator.contentDocument.getElementById(page + "-nav-link").classList.add("clicked");
+	}
+
+	iframe.onload = transformPageContent;
 
 	for(let parameter = 0; parameter < search_pairs.length; parameter += 2) {
 		switch(search_pairs[parameter]) {
@@ -42,6 +62,7 @@
 	}
 	else {
 		iframe.src = page + ".html";
+		navigator.onload = updateNavigator;
 	}
 
 	return;

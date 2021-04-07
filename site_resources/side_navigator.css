@@ -2,23 +2,37 @@
 	side_navigator.css
 */
 
+:root {
+	--gameboy-dark: #01201b;
+	--gameboy-light: #4d892e;
+	--gameboy-neutral: #267c24;
+	--gameboy-font: "Super-Legend-Boy", "Press Start 2P", "Courier New";
+}
+
 body {
-	background-color: #1e1f21;
-	background-image: linear-gradient(to right,#1e1f21, #000000);
+	background-color: var(--gameboy-dark);
+	background-image: linear-gradient(to right, var(--gameboy-light), var(--gameboy-dark));
+	font-family: var(--gameboy-font);
 }
 
 div#side-navigator {
-	//
+	font-size: 12px;
 }
 
 nav#side-navigator-links {
 	cursor: pointer;
-	color: #00C0C0;
+	color: var(--gameboy-light);
 }
 
 nav#side-navigator-links>div {
-	background-color: #000000;
-	border-color: #1e1f21;
+	background-color: var(--gameboy-dark);
+	border-color: var(--gameboy-light);
 	border-style: solid;
 	border-width: 1px;
+}
+
+nav#side-navigator-links>div.clicked,
+nav#side-navigator-links>div:hover {
+	background-color: var(--gameboy-neutral);
+	color: var(--gameboy-dark);
 }
