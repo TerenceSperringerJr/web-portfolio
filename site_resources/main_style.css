@@ -21,6 +21,7 @@ body {
 	color: var(--gameboy-neutral);
 	background-color: var(--gameboy-dark);
 	font-family: "Courier New", monospace;
+	margin: 0px;
 }
 
 h1, h2, h3, h4 {

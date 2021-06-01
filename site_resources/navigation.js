@@ -15,13 +15,18 @@
 		}
 
 		if(iframe.contentWindow.location.origin === location.origin) {
-			let page_body = iframe.contentDocument.body;
+			let page_body = iframe.contentDocument.body,
+				links = page_body.getElementsByTagName("a");
 
 			iframe.hidden = true;
 
 			//convert from relative to absolute urls
 			for(let img of iframe.contentDocument.images) {
 				img.src = img.src;
+			}
+
+			for(let link of links) {
+				link.href = link.href;
 			}
 
 			while (page_body.firstChild) {
