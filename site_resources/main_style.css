@@ -48,15 +48,18 @@ div#page-content h4 {
 	margin-bottom: 16px;
 }
 
-div#page-content p {
+div#page-content div:not(form *, td *) {
 	margin: auto;
 	text-align: center;
+}
+
+div#page-content p {
 	margin-top: 8px;
 	margin-bottom: 8px;
 }
 
 div#page-content hr {
-	border-color: var(--gameboy-light);
+	color: var(--gameboy-light);
 }
 
 div#page-content fieldset {
