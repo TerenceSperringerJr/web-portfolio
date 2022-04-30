@@ -24,30 +24,51 @@ body {
 	margin: 0px;
 }
 
-h1, h2, h3, h4 {
-	text-align: center;
-	font-family: var(--gameboy-font);
-	margin: 0px;
-}
-
 a {
 	color: var(--gameboy-light);
 }
 
 iframe#page-source,
 div#page-content {
+	position:relative;
+	left: 15%;
 	border: none;
-	margin-left: 15%;
 	width: 85%;
 	min-height: 480px;
 }
 
+div#page-content h1,
+div#page-content h2,
+div#page-content h3,
+div#page-content h4 {
+	text-align: center;
+	font-family: var(--gameboy-font);
+	margin: auto;
+	margin-top: 16px;
+	margin-bottom: 16px;
+}
+
+div#page-content p {
+	margin: auto;
+	text-align: center;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+div#page-content hr {
+	border-color: var(--gameboy-light);
+}
+
+div#page-content fieldset {
+	border-color: var(--gameboy-light);
+}
+
 iframe#site-header {
 	position: relative;
-	top: 0px;
 	left: 15%;
 	width: 85%;
 	border: none;
+	height: 80px;
 }
 
 iframe#side-navigator {
@@ -60,6 +81,10 @@ iframe#side-navigator {
 
 
 /* Personal Projects */
+.extra-bottom-space{
+	margin-bottom: 10px;
+}
+
 .project-description {
 	display: inline-block;
 }
@@ -87,6 +112,10 @@ summary {
 details>:not(summary) {
 	position: relative;
 	margin-left: 5%;
+}
+
+div#page-content table {
+	border-spacing: 0px;
 }
 
 td {
