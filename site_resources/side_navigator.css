@@ -11,8 +11,20 @@
 
 body {
 	background-color: var(--gameboy-dark);
-	background-image: linear-gradient(to right, var(--gameboy-light), var(--gameboy-dark));
 	font-family: var(--gameboy-font);
+}
+
+@media only screen and (orientation: portrait) {
+	body {
+		background-image: linear-gradient(to right, var(--gameboy-light), var(--gameboy-dark));
+	}
+}
+
+@media only screen and (orientation: landscape) {
+	body {
+		background-image: linear-gradient(to bottom, var(--gameboy-light), var(--gameboy-dark));
+		background-repeat: no-repeat;
+	}
 }
 
 div#side-navigator {

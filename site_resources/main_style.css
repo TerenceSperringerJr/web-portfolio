@@ -31,10 +31,7 @@ a {
 iframe#page-source,
 div#page-content {
 	position:relative;
-	left: 15%;
 	border: none;
-	width: 85%;
-	min-height: 480px;
 }
 
 div#page-content h1,
@@ -68,20 +65,53 @@ div#page-content fieldset {
 
 iframe#site-header {
 	position: relative;
-	left: 15%;
-	width: 85%;
 	border: none;
-	height: 80px;
 }
 
 iframe#side-navigator {
-	position: fixed;
 	left: 0px;
 	border: none;
-	height: 100%;
-	max-width: 15%;
 }
 
+@media only screen and (orientation: landscape) {
+	iframe#site-header {
+		left: 15%;
+		width: 85%;
+	}
+
+	iframe#side-navigator {
+		position: fixed;
+		height: 100%;
+		max-width: 15%;
+	}
+
+	iframe#page-source,
+	div#page-content {
+		left: 15%;
+		width: 85%;
+		min-height: 480px;
+	}
+}
+
+@media only screen and (orientation: portrait) {
+	iframe#site-header {
+		width: 100%;
+	}
+
+	iframe#side-navigator {
+		position: sticky;
+		top: 0px;
+		width: 100%;
+		z-index: 1;
+		height: 71px;
+	}
+
+	iframe#page-source,
+	div#page-content {
+		width: 96%;
+		margin: auto;
+	}
+}
 
 /* Personal Projects */
 .extra-bottom-space{
