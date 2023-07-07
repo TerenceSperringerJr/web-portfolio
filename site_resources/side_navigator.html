@@ -24,23 +24,19 @@
 <script>
 "use strict";
 /*
-<div onclick="window.top.location.search = '';">About</div>
-<div onclick="window.top.location.search = 'page=personal';">Personal Projects</div>
-<div onclick="window.top.location.search = 'page=professional';">Professional Work</div>
-<div onclick="window.top.location.search = 'resource=https://terencesperringerjr.github.io/resume/resume.xml';">Resume</div>
+<div onclick="window.parent.location.search = '';">About</div>
+<div onclick="window.parent.location.search = 'page=personal';">Personal Projects</div>
+<div onclick="window.parent.location.search = 'page=professional';">Professional Work</div>
+<div onclick="window.parent.location.search = 'resource=https://terencesperringerjr.github.io/resume/resume.xml';">Resume</div>
 */
 
 (function() {
 	let nav = document.getElementById("side-navigator-links"),
-		page_source = window.top.document.getElementById("page-source");
-
-	function loadPageSource(url) {
-		page_source.src = url;
-	}
+		page_source = window.parent.document.getElementById("page-source");
 
 	for(let link of nav.children) {
 		link.onclick = () => {
-			loadPageSource(link.getAttribute("url"));
+			page_source.src = link.getAttribute("url");
 
 			for(let unclicked of nav.children) {
 				unclicked.classList.remove("clicked");
