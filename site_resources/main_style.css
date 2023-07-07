@@ -75,20 +75,20 @@ iframe#side-navigator {
 
 @media only screen and (orientation: landscape) {
 	iframe#site-header {
-		left: 15%;
-		width: 85%;
+		left: 160px;
+		width: calc(100% - 170px);
 	}
 
 	iframe#side-navigator {
 		position: fixed;
 		height: 100%;
-		max-width: 15%;
+		width: 160px;
 	}
 
 	iframe#page-source,
 	div#page-content {
-		left: 15%;
-		width: 85%;
+		left: 160px;
+		width: calc(100% - 170px);
 		min-height: 480px;
 	}
 }

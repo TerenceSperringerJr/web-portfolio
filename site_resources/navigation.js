@@ -10,22 +10,22 @@
 		resource;
 
 	function transformPageContent() {
-		while(page_content.firstChild){
+		while (page_content.firstChild) {
 			page_content.removeChild(page_content.firstChild);
 		}
 
-		if(iframe.contentWindow.location.origin === location.origin) {
+		if (iframe.contentWindow.location.origin === location.origin) {
 			let page_body = iframe.contentDocument.body,
 				links = page_body.getElementsByTagName("a");
 
 			iframe.hidden = true;
 
 			//convert from relative to absolute urls
-			for(let img of iframe.contentDocument.images) {
+			for (let img of iframe.contentDocument.images) {
 				img.src = img.src;
 			}
 
-			for(let link of links) {
+			for (let link of links) {
 				link.href = link.href;
 			}
 
